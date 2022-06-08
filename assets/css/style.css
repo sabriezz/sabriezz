@@ -1950,8 +1950,8 @@ CHAT
 
 .chat {
   position: absolute;
-  top: 0px;
-  left: 10em;
+  bottom: 50%;
+  left: 100%;
   max-width: 14em;
   width: fit-content;
   z-index: 999;
@@ -2069,4 +2069,8 @@ color: white;
 
 .hide{
   display: none;
+}
+
+.container{
+  position: relative;
 }
