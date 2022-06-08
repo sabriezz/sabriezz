@@ -143,14 +143,14 @@ function delay(fn, params, t) {
 function sleeping(params){
   document.querySelector('.chat').classList.add('hide');
   let image = document.querySelector('img');
-  image.setAttribute('src', '/assets/images/clouds.png');
+  image.setAttribute('src', './assets/images/clouds.png');
 }
 
 function chatting(params){
   document.querySelector('.chat').classList.remove('hide');
   let message = document.querySelector('.message.last');
   let image = document.querySelector('img');
-  image.setAttribute('src', '/assets/images/smile.png');
+  image.setAttribute('src', './assets/images/smile.png');
   message.innerHTML = 'It happens so often! I need some rest!';
 }
 
@@ -158,7 +158,7 @@ function solving(params){
   document.querySelector('.chat').classList.remove('hide');
   let message = document.querySelector('.message.last');
   let image = document.querySelector('img');
-  image.setAttribute('src', '/assets/images/oh-no.png');
+  image.setAttribute('src', './assets/images/oh-no.png');
   message.innerHTML = 'I just missed a semicolon! 🤔';
 }
 
@@ -166,7 +166,7 @@ function debugging(params){
   document.querySelector('.chat').classList.remove('hide');
   let message = document.querySelector('.message.last');
   let image = document.querySelector('img');
-  image.setAttribute('src', '/assets/images/angry.png');
+  image.setAttribute('src', './assets/images/angry.png');
   message.innerHTML = 'Oh no! It seems like I\'m debugging! 🤬';
 }
 
@@ -179,14 +179,14 @@ function programming (params){
       document.querySelector('.chat').classList.add('hide');
     }
     let image = document.querySelector('img');
-    image.setAttribute('src', '/assets/images/programming.png');
+    image.setAttribute('src', './assets/images/programming.png');
 }
 
 function welcoming(params){
   document.querySelector('.chat').classList.remove('hide');
   let message = document.querySelector('.message.last');
   let image = document.querySelector('img');
-  image.setAttribute('src', '/assets/images/smile.png');
+  image.setAttribute('src', './assets/images/smile.png');
   message.innerHTML = 'How are you? I\'m doing ok! 😊';
 }
 
@@ -194,13 +194,13 @@ function waving (params){
     document.querySelector('.chat').classList.remove('hide');
     let message = document.querySelector('.message.last');
     let image = document.querySelector('img');
-    image.setAttribute('src', '/assets/images/waving.png');
+    image.setAttribute('src', './assets/images/waving.png');
     message.innerHTML = 'Hi There! 👋';
 }
 
 function writing(params){
     let image = document.querySelector('img');
-    image.setAttribute('src', '/assets/images/thinking.png');
+    image.setAttribute('src', './assets/images/thinking.png');
     document.querySelector('.chat').classList.remove('hide');
     document.querySelector('.message.last').innerHTML = '&nbsp; <div class="dot-flashing"></div> &nbsp; ';
 }
