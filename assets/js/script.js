@@ -236,7 +236,7 @@ docReady(function () {
 
       d = delay(writing, { 'showtext': true }, 3000)
       .delay(waving, { 'showtext': true }, 3000)
-      .delay(welcoming, { 'showtext': true }, 3123000)
+      .delay(welcoming, { 'showtext': true }, 3000)
       .delay(programming, { 'showtext': true }, 5000)
       .delay(debugging, { 'showtext': true }, 5000)
       .delay(programming, { 'showtext': false }, 6000)

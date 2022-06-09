@@ -135,8 +135,8 @@ html { font-family: var(--ff-poppins); }
 
 body {
   background: #5433FF;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #A5FECB, #20BDFF, #5433FF);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #A5FECB, #20BDFF, #5433FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to right, #8cd4ab, #20BDFF, #5433FF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #8cd4ab, #20BDFF, #5433FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
@@ -265,7 +265,7 @@ article.active {
   left: 0;
   width: 30px;
   height: 3px;
-  background: linear-gradient(to right, #A5FECB, #20BDFF, #5433FF);
+  background: linear-gradient(to right, #8cd4ab, #20BDFF, #5433FF);
   border-radius: 3px;
 }
 
@@ -918,8 +918,8 @@ main {
 
 .skill-progress-fill {
   background: #5433FF;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #A5FECB, #20BDFF, #5433FF);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #A5FECB, #20BDFF, #5433FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to right, #8cd4ab, #20BDFF, #5433FF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #8cd4ab, #20BDFF, #5433FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   height: 100%;
   border-radius: inherit;
@@ -2095,5 +2095,9 @@ ion-icon{
   color: white;
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
   background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+}
+
+figure:hover{
+  cursor: pointer;
 }
 
