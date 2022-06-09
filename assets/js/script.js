@@ -4,12 +4,12 @@
 function docReady(fn) {
   // see if DOM is already available
   if (document.readyState === "complete" || document.readyState === "interactive") {
-      // call on next available tick
-      setTimeout(fn, 1);
+    // call on next available tick
+    setTimeout(fn, 1);
   } else {
-      document.addEventListener("DOMContentLoaded", fn);
+    document.addEventListener("DOMContentLoaded", fn);
   }
-}    
+}
 
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
@@ -107,126 +107,141 @@ for (let i = 0; i < navigationLinks.length; i++) {
 function delay(fn, params, t) {
   // private instance variables
   var queue = [], self, timer;
-  
-  function schedule(fn, params,t) {
-      timer = setTimeout(function() {
-          timer = null;
-          fn(params)
-          if (queue.length) {
-              var item = queue.shift();
-              schedule(item.fn, item.params, item.t);
-          }
-      }, t);            
+
+  function schedule(fn, params, t) {
+    timer = setTimeout(function () {
+      timer = null;
+      fn(params)
+      if (queue.length) {
+        var item = queue.shift();
+        schedule(item.fn, item.params, item.t);
+      }
+    }, t);
   }
   self = {
-      delay: function(fn, params, t) {
-          // if already queuing things or running a timer, 
-          //   then just add to the queue
-          if (queue.length || timer) {
-              queue.push({fn: fn, params: params, t: t});
-          } else {
-              // no queue or timer yet, so schedule the timer
-              schedule(fn, params, t);
-          }
-          return self;
-      },
-      cancel: function() {
-          clearTimeout(timer);
-          queue = [];
-          return self;
+    delay: function (fn, params, t) {
+      // if already queuing things or running a timer, 
+      //   then just add to the queue
+      if (queue.length || timer) {
+        queue.push({ fn: fn, params: params, t: t });
+      } else {
+        // no queue or timer yet, so schedule the timer
+        schedule(fn, params, t);
       }
+      return self;
+    },
+    cancel: function () {
+      clearTimeout(timer);
+      queue = [];
+      return self;
+    }
   };
   return self.delay(fn, params, t);
 }
 
 
-function sleeping(params){
+var d;
+
+const path = './assets/images/'
+function sleeping(params) {
   document.querySelector('.chat').classList.add('hide');
   let image = document.querySelector('img');
-  image.setAttribute('src', './assets/images/clouds.png');
+  images.filter(data => data.id == 2).map(data => image.setAttribute('src', path + data.src));
 }
 
-function chatting(params){
+function chatting(params) {
   document.querySelector('.chat').classList.remove('hide');
   let message = document.querySelector('.message.last');
   let image = document.querySelector('img');
-  image.setAttribute('src', './assets/images/smile.png');
+  images.filter(data => data.id == 4).map(data => image.setAttribute('src', path + data.src));
+
   message.innerHTML = 'It happens so often! I need some rest!';
 }
 
-function solving(params){
+function solving(params) {
   document.querySelector('.chat').classList.remove('hide');
   let message = document.querySelector('.message.last');
   let image = document.querySelector('img');
-  image.setAttribute('src', './assets/images/oh-no.png');
+  images.filter(data => data.id == 7).map(data => image.setAttribute('src', path + data.src));
   message.innerHTML = 'I just missed a semicolon! 🤔';
 }
 
-function debugging(params){
+function debugging(params) {
   document.querySelector('.chat').classList.remove('hide');
   let message = document.querySelector('.message.last');
   let image = document.querySelector('img');
-  image.setAttribute('src', './assets/images/angry.png');
+  images.filter(data => data.id == 8).map(data => image.setAttribute('src', path + data.src));
   message.innerHTML = 'Oh no! It seems like I\'m debugging! 🤬';
 }
 
-function programming (params){
+function programming(params) {
   document.querySelector('.chat').classList.remove('hide');
-    let message = document.querySelector('.message.last');
-    if(params.showtext){
-      message.innerHTML = 'I\'m programming! 💻';
-    }else{
-      document.querySelector('.chat').classList.add('hide');
-    }
-    let image = document.querySelector('img');
-    image.setAttribute('src', './assets/images/programming.png');
+  let message = document.querySelector('.message.last');
+  if (params.showtext) {
+    message.innerHTML = 'I\'m programming! 💻';
+  } else {
+    document.querySelector('.chat').classList.add('hide');
+  }
+  let image = document.querySelector('img');
+  images.filter(data => data.id == 3).map(data => image.setAttribute('src', path + data.src));
+
 }
 
-function welcoming(params){
+function welcoming(params) {
   document.querySelector('.chat').classList.remove('hide');
   let message = document.querySelector('.message.last');
   let image = document.querySelector('img');
-  image.setAttribute('src', './assets/images/smile.png');
+  images.filter(data => data.id == 5).map(data => image.setAttribute('src', path + data.src));
   message.innerHTML = 'How are you? I\'m doing ok! 😊';
 }
 
-function waving (params){
-    document.querySelector('.chat').classList.remove('hide');
-    let message = document.querySelector('.message.last');
-    let image = document.querySelector('img');
-    image.setAttribute('src', './assets/images/waving.png');
-    message.innerHTML = 'Hi There! 👋';
+function waving(params) {
+  document.querySelector('.chat').classList.remove('hide');
+  let message = document.querySelector('.message.last');
+  let image = document.querySelector('img');
+  images.filter(data => data.id == 9).map(data => image.setAttribute('src', path + data.src));
+  message.innerHTML = 'Hi There! 👋';
 }
 
-function writing(params){
-    let image = document.querySelector('img');
-    image.setAttribute('src', './assets/images/thinking.png');
-    document.querySelector('.chat').classList.remove('hide');
-    document.querySelector('.message.last').innerHTML = '&nbsp; <div class="dot-flashing"></div> &nbsp; ';
+function writing(params) {
+  let image = document.querySelector('img');
+  images.filter(data => data.id == 6).map(data => image.setAttribute('src', path + data.src));
+  document.querySelector('.chat').classList.remove('hide');
+  document.querySelector('.message.last').innerHTML = '&nbsp; <div class="dot-flashing"></div> &nbsp; ';
 }
+
+
+function stopAnimation() {
+  //random number between 1 and 9
+  d.cancel();
+  let randomNumber = Math.floor(Math.random() * 9) + 1;
+  let image = document.querySelector('img');
+  images.filter(data => data.id == randomNumber).map(data => image.setAttribute('src', path + data.src));
+  document.querySelector('.chat').classList.add('hide');
+}
+var images;
 
 docReady(function () {
 
+  fetch('./assets/images/images.json')
+    .then(response => {
+      return response.json();
+    })
+    .then(jsondata => {
+      images = Object.values(jsondata.images)
+      var elements = document.getElementsByClassName("click");
+      Array.from(elements).forEach(function (element) {
+        element.addEventListener('click', stopAnimation);
+      });
 
-  // 3 dot animation for message
-var d = delay(writing, {'showtext':true}, 3000)
-        .delay(waving,{'showtext':true},3000)
-        .delay(welcoming,{'showtext':true},3123000)
-        .delay(programming,{'showtext':true},5000)
-        .delay(debugging,{'showtext':true}, 5000)
-        .delay(programming,{'showtext':false},6000)
-        .delay(solving,{'showtext':true},3000)
-        .delay(chatting,{'showtext':true},3000)
-        .delay(sleeping,{'showtext':false},3000);
-  //after 3 seconds adds class to .message.last div
-  // //modify text of div class 'message last'
-  // const message = document.querySelector('.message.last');
-  // message.innerHTML = '<p>Thank you for your message!</p>';
-
-  // //modify src of tag image
-  // const image = document.querySelector('img');
-  // image.setAttribute('src', '/assets/images/angry.png');
-
-
-
+      d = delay(writing, { 'showtext': true }, 3000)
+      .delay(waving, { 'showtext': true }, 3000)
+      .delay(welcoming, { 'showtext': true }, 3123000)
+      .delay(programming, { 'showtext': true }, 5000)
+      .delay(debugging, { 'showtext': true }, 5000)
+      .delay(programming, { 'showtext': false }, 6000)
+      .delay(solving, { 'showtext': true }, 3000)
+      .delay(chatting, { 'showtext': true }, 3000)
+      .delay(sleeping, { 'showtext': false }, 3000);
+    });
 });

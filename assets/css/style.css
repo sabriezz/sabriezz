@@ -873,9 +873,9 @@ main {
   left: -33px;
   height: 6px;
   width: 6px;
-  background: var(--text-gradient-yellow);
+  background: #20BDFF;
   border-radius: 50%;
-  box-shadow: 0 0 0 4px var(--jet);
+  box-shadow: 0 0 0 2px var(--jet);
 }
 
 .timeline-text {
@@ -1982,7 +1982,7 @@ CHAT
 .yours .message {
   background: #0085D1;
   position: relative;
-  min-width: 10em;
+  min-width: 15em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2078,3 +2078,22 @@ color: white;
 .container{
   position: relative;
 }
+
+ion-icon{
+  color: white;
+}
+
+.linkedin:hover{
+  color: #0e76a8;
+}
+
+.github:hover{
+  color: #171515; 
+}
+
+.insta:hover{
+  color: white;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+}
+

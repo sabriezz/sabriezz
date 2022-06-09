@@ -1,0 +1,40 @@
+{
+    "images": [
+        {
+            "id": "1",
+            "src": "idea.png"
+        },
+        {
+            "id": "2",
+            "src": "clouds.png"
+        },
+        {
+            "id": "3",
+            "src": "programming.png"
+        },
+        {
+            "id": "4",
+            "src": "sleeping.png"
+        },
+        {
+            "id": "5",
+            "src": "smile.png"
+        },
+        {
+            "id": "6",
+            "src": "thinking.png"
+        },
+        {
+            "id": "7",
+            "src": "oh-no.png"
+        },
+        {
+            "id": "8",
+            "src": "angry.png"
+        },
+        {
+            "id": "9",
+            "src": "waving.png"
+        }
+    ]
+}
