@@ -4,8 +4,8 @@ Hi 👋 My name is Sabri Ezzine
 I'm a Web Developer and Designer
 --------------------------------
 
-* 🌍  I'm based in Verona
-* ✉️  You can contact me at [ezzine.s22@gmail.com](mailto:ezzine.s22@gmail.com)
+* 🌍  I'm based in Copenhagen 
+* ✉️  You can contact me at [ezzine.s22@gmail.com](mailto:ezzine.s22@gmail.com)
 * 🧠  I'm learning Vue.js
 
 ### Skills
